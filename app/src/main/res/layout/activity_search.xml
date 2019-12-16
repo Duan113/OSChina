@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.cat.oschina.synthetical.fragment.SearchActivity">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/list_divider_color" />
+
+        <LinearLayout
+            android:id="@+id/ly_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape">
+            <ImageView
+                android:id="@+id/btn_more"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/shape"
+                android:src="@mipmap/search" />
+
+<EditText
+    android:layout_marginLeft="55dp"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:hint="搜索软件、资讯、用户"/>
+</RelativeLayout>
+            <Button
+                android:id="@+id/search1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:text="搜索"
+                android:textColor="#24cf5f"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/list_divider_color" />
+
+    </LinearLayout>
+<!--    <RelativeLayout-->
+<!--        android:padding="10dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <TextVfiew-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="历史记录"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/deleteAll"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:text="删除历史记录"/>-->
+<!--    </RelativeLayout>-->
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="10dp">-->
+
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+
+</LinearLayout>

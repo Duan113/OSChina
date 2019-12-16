@@ -1,0 +1,17 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    android:useLevel="false">
+    //颜色
+    <solid android:color="#262626">
+
+    </solid>
+
+    //大小
+    <size android:width= "15dp"
+
+        android:height= "4dp" />
+
+    //  <!-- 圆角半径是高度的一般就是一个圆弧了 -->
+    <corners android:radius="20dp" />
+
+</shape>

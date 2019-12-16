@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_login"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".my.activity.ResetActivity">
+
+    <include
+        android:id="@+id/ly_register_bar"
+        layout="@layout/activity_main_login_navigation_reset"/>
+
+    <LinearLayout
+        android:id="@+id/reset_password"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_login_input_ok"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_register_password"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="14dp"
+            android:contentDescription="@null"
+            android:src="@mipmap/ic_login_password"
+            tools:ignore="RtlHardcoded"/>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="22dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:background="@color/login_line_color"/>
+
+        <EditText
+            android:id="@+id/et_register_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入至少六位新密码"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/account_input_color"
+            android:textCursorDrawable="@null"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/iv_register_username_del"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/ic_clear"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/bg_login_submit_lock"
+        android:elevation="0dp"
+        android:outlineProvider="none"
+        android:text="确认"
+        android:textColor="@color/account_lock_font_color"
+        android:textSize="18sp"
+        android:translationZ="0dp" />
+
+</LinearLayout>

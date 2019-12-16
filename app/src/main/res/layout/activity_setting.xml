@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".my.activity.SettingActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        tools:ignore="RtlHardcoded"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/lay_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+
+                android:id="@+id/ly_retrieve_bar1"
+                layout="@layout/fragment_my_setting_bar" />
+
+            <View
+                style="@style/h_line"
+                android:layout_marginTop="20dip" />
+
+            <LinearLayout
+                android:id="@+id/rl_clean_cache"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="清理缓存"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_cache_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary_color"
+                    android:textSize="14sp"
+                    tools:ignore="RelativeOverlap"
+                    tools:text="13M" />
+            </LinearLayout>
+            <!--线条分割-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <!--文字-->
+            <LinearLayout
+                android:id="@+id/rl_double_click_exit"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="双击退出"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
+                <!--                android:id="@+id/tb_double_click_exit"-->
+                <!--                style="@style/option_item_toggleButton" />-->
+            </LinearLayout>
+            <!--线条分割-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <!--文字-->
+            <LinearLayout
+                android:id="@+id/tuisong"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="接收推送"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
+
+                <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
+                <!--                android:id="@+id/tui"-->
+                <!--                style="@style/option_item_toggleButton" />-->
+            </LinearLayout>
+            <!--线条分割-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <!--文字-->
+            <LinearLayout
+                android:id="@+id/rl_clip"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="自动检测剪切板中的URL"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
+
+                <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
+                <!--                android:id="@+id/tb_clip"-->
+                <!--                style="@style/option_item_toggleButton" />-->
+
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <LinearLayout
+                android:id="@+id/light"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="夜间模式"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
+
+                <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
+                <!--                android:id="@+id/night"-->
+                <!--                style="@style/option_item_toggleButton" />-->
+
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <LinearLayout
+                android:id="@+id/time"
+                style="@style/option_item_rl"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_material"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="top">
+                    <TextView
+                        style="@style/option_item_text_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="夜间模式时间段"
+                        android:layout_gravity="top"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
+                    <!--                android:id="@+id/time1"-->
+                    <!--                style="@style/option_item_toggleButton" />-->
+                </LinearLayout>
+                <!--            <LinearLayout-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="match_parent">-->
+                <!--            <EditText-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_gravity="bottom"-->
+                <!--                android:hint="22:00"-->
+
+                <!--                android:textSize="15sp"-->
+                <!--                tools:ignore="HardcodedText" />-->
+                <!--            <TextView-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="至"-->
+                <!--                android:textSize="15sp"-->
+                <!--                android:textColor="@color/black"/>-->
+                <!--            <EditText-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:hint="06:00"-->
+                <!--                android:textSize="15sp"-->
+                <!--                tools:ignore="HardcodedText" />-->
+                <!--                </LinearLayout>-->
+            </LinearLayout>
+
+
+            <View style="@style/h_line" />
+            <!--空行-->
+            <View
+                style="@style/h_line"
+                android:layout_marginTop="20dip" />
+            <!--文字分割-->
+            <FrameLayout
+                android:id="@+id/rl_feedback"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:text="意见反馈"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/rl_about"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:text="关于我们"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/rl_check_version"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:text="检查更新"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <View style="@style/h_line" />
+
+            <View
+                android:id="@+id/setting_line_top"
+                style="@style/h_line"
+                android:layout_marginTop="20dp" />
+
+            <!--        <FrameLayout-->
+            <!--            android:id="@+id/rl_cancel"-->
+            <!--            style="@style/option_item_rl"-->
+            <!--            android:background="@drawable/ic_material">-->
+
+            <!--            <TextView-->
+            <!--                style="@style/option_item_text_parent"-->
+            <!--                android:text="@string/setting_cancel"-->
+            <!--                android:textColor="?attr/textColor"-->
+            <!--                android:textSize="@dimen/text_size_16" />-->
+            <!--        </FrameLayout>-->
+
+            <View
+                android:id="@+id/setting_line_bottom"
+                style="@style/h_line" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

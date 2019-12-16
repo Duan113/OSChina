@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".my.fragment.MyFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:background="@color/green">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:id="@+id/iv_logo_head"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@null"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/background_white"
+                    android:src="@mipmap/wenzhang"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iv_login"
+                    android:text="点击头像登录"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="70dp"
+                    android:layout_gravity="center"/>
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:id="@+id/iv_logo_setting"
+                    android:layout_marginRight="40dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:contentDescription="@null"
+                    android:padding="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/btn_my_setting"/>
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:id="@+id/iv_qr_code"
+                    android:layout_gravity="center_vertical|right"
+                    android:contentDescription="@null"
+                    android:padding="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/btn_qrcode"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:id="@+id/img11"
+                    android:src="@mipmap/img"/>
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="3px"
+            android:background="#18be40"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <Button
+            android:id="@+id/news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我的消息"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:drawableLeft="@mipmap/xiaoxi"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:drawableRight="@mipmap/qianjin"
+            android:drawablePadding="10dip"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:background="@color/login_line_color">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/list_divider_color"
+                android:layout_marginLeft="14dp"
+                tools:ignore="RtlHardcoded"/>
+
+        </FrameLayout>
+
+            <Button
+                android:id="@+id/xz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="我的勋章"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableLeft="@mipmap/xunzhang"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/qianjin"
+                android:drawablePadding="10dip"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:background="@color/login_line_color">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/list_divider_color"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/read"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阅读记录"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableLeft="@mipmap/jilu"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/qianjin"
+                android:drawablePadding="10dip"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:background="@color/login_line_color">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/list_divider_color"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/boke"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="我的博客"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableLeft="@mipmap/boke"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/qianjin"
+                android:drawablePadding="10dip"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:background="@color/login_line_color">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/list_divider_color"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="我的灰名单"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableLeft="@mipmap/huimingdan"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/qianjin"
+                android:drawablePadding="10dip"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:background="@color/login_line_color">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/list_divider_color"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/wen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="我的问答"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableLeft="@mipmap/wenda"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/qianjin"
+                android:drawablePadding="10dip"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:background="@color/login_line_color">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/list_divider_color"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/tou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="我的投递"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableLeft="@mipmap/toudi"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/qianjin"
+                android:drawablePadding="10dip"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:background="@color/login_line_color">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/list_divider_color"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="我的活动"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableLeft="@mipmap/wodehuodong"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/qianjin"
+                android:drawablePadding="10dip"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:background="@color/login_line_color">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/list_divider_color"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/gun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="关注标签"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableLeft="@mipmap/tag"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/qianjin"
+                android:drawablePadding="10dip"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:background="@color/login_line_color">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/list_divider_color"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/please"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="邀请好友"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableLeft="@mipmap/fenxiang"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/qianjin"
+                android:drawablePadding="10dip"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:background="@color/login_line_color">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/list_divider_color"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded"/>
+
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

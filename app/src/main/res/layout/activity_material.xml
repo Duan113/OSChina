@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".my.activity.MaterialActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        tools:ignore="RtlHardcoded"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/lay_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+
+                android:id="@+id/ly_retrieve_bar1"
+                layout="@layout/fragment_my_material_bar" />
+
+            <View
+                style="@style/h_line"
+                android:layout_marginTop="20dip" />
+
+            <LinearLayout
+                android:id="@+id/head"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="头像"
+                    android:drawableRight="@mipmap/ic_male"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+            <!--线条分割-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <!--文字-->
+            <LinearLayout
+                android:id="@+id/name"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="昵称"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="2796859746"
+                    android:textColor="#c4c4c4"
+                    android:gravity="right"/>
+
+            </LinearLayout>
+            <!--线条分割-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <!--文字-->
+            <LinearLayout
+                android:id="@+id/join"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="加入时间"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="2019/12/10"
+                    android:textColor="#c4c4c4"
+                    android:gravity="right"/>
+            </LinearLayout>
+            <!--线条分割-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <!--文字-->
+            <LinearLayout
+                android:id="@+id/city"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="所在地区"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="南京"
+                    android:textColor="#c4c4c4"
+                    android:gravity="right"/>
+
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <LinearLayout
+                android:id="@+id/open"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="开发平台"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="无"
+                    android:textColor="#c4c4c4"
+                    android:gravity="right"/>
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/h_line"
+                    android:layout_marginLeft="14dp"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+            <LinearLayout
+                android:id="@+id/yu"
+                style="@style/option_item_rl"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="专长领域"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="无"
+                    android:textColor="#c4c4c4"
+                    android:gravity="right"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/person"
+                style="@style/option_item_rl"
+                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="wrap_content"
+                    android:text="个性签名"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="这个人很懒，啥也没写"
+                    android:textColor="#c4c4c4"
+                    />
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
