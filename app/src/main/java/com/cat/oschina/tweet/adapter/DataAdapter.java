@@ -1,8 +1,9 @@
-package com.king.oschina.tweet.adapter;
+package com.cat.oschina.tweet.adapter;
 
+import com.cat.oschina.tweet.entity.Data;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.king.oschina.tweet.entity.Data;
+
 
 import java.util.List;
 

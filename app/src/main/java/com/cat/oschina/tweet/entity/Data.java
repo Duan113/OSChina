@@ -1,4 +1,4 @@
-package com.king.oschina.tweet.entity;
+package com.cat.oschina.tweet.entity;
 
 public class Data {
 }

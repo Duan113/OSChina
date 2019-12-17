@@ -57,7 +57,7 @@ LinearLayout linearLayout;
         fragments.add(new NewsFragment());
         fragments.add(new TweetFragment());
         fragments.add(new DiscovtryFragment());
-        fragments.add(new My1Fragment());
+        fragments.add(new MyFragment());
 
 
         View view = LayoutInflater.from(this).inflate(R.layout.custom_add_view, null);

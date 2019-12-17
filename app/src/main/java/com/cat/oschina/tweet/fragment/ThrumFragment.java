@@ -6,8 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cat.oschina.R;
-import com.king.oschina.tweet.adapter.ThrumAdapter;
-import com.king.oschina.tweet.entity.Thrum;
+import com.cat.oschina.tweet.adapter.ThrumAdapter;
+import com.cat.oschina.tweet.entity.Thrum;
+
 
 import java.util.ArrayList;
 import java.util.List;

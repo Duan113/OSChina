@@ -155,7 +155,7 @@ public class MyFragment extends androidx.fragment.app.Fragment implements View.O
                 intent.putExtra("title","登录");
                 startActivity(intent);
                 break;
-            case R.id.img:
+            case R.id.img11:
                 intent=new Intent(getActivity(), LoginActivity.class);
                 intent.putExtra("title","登录");
                 startActivity(intent);

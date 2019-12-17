@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c4c4c4"
+       >
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="120dp"
+            android:layout_gravity="center">
+<ImageView
+    android:id="@+id/start_img"
+    android:background="#000000"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:layout_marginLeft="20dp"
+   android:layout_marginBottom="40dp"
+    android:src="@mipmap/code"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="80dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+               android:textSize="18sp"
+                android:text="扫一扫上面的二维码，加我为好友"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="(长按保存到本地)"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</LinearLayout>

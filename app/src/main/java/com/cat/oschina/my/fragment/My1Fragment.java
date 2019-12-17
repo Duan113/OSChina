@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 
 import com.cat.oschina.R;
+import com.cat.oschina.my.activity.ImgActivity;
 import com.cat.oschina.my.activity.LoginActivity;
 import com.cat.oschina.my.activity.MaterialActivity;
 import com.cat.oschina.my.activity.Setting1Activity;
@@ -58,6 +61,7 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
 
     private View view;
     //    private ListView lv2;
+    Dialog dia;
     private Button news,xun,note,boke,dan,da,tou,activity,foll,friend;
     private ImageView login,seting,code,img;
     private TextView login1;
@@ -106,7 +110,41 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
         login1.setOnClickListener(this);
         login.setOnClickListener(this);
         seting.setOnClickListener(this);
-        code.setOnClickListener(this);
+        code.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        switch (v.getId()){
+                                            case R.id.iv_qr_code1:
+//                                查看大头像
+                                                                LayoutInflater inflater = LayoutInflater.from ( getActivity ( ) );
+                                                                View imgView = inflater.inflate ( R.layout.activity_start_dialog, null );
+                                                                Dialog dialog1 = new Dialog ( getActivity ( ), R.style.Dialog_Fullscreen );
+//                                使得弹框中的某个元素失效，不显示
+//                             ImageView img=(ImageView)imgView. findViewById ( R.id.iv_denglu1 );
+//                                img.setImageBitmap ( bitmap);
+                                                                dialog1.setContentView ( imgView );
+                                                                dialog1.show ( );
+//                                 设置全屏显示
+                                                                imgView.setOnClickListener ( new View.OnClickListener ( ) {
+                                                                    @Override
+                                                                    public void onClick(View v) {
+                                                                        dialog1.cancel ( );
+                                                                    }
+                                                                } );
+                                                                break;
+                                                        }
+
+
+                                                    }
+
+                                                } );
+
+
+
+
+
+
+
         img.setOnClickListener(this);
         news.setOnClickListener(this);
         xun.setOnClickListener(this);
@@ -168,16 +206,13 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
 //                                查看大头像
                                 LayoutInflater inflater = LayoutInflater.from ( getActivity ( ) );
                                 View imgView = inflater.inflate ( R.layout.fragment_my1_head, null );
-                                final AlertDialog dialog1 = new AlertDialog.Builder ( getActivity ( ) ).create ( );
+                            Dialog dialog1 = new Dialog ( getActivity ( ), R.style.Dialog_Fullscreen );
 //                                使得弹框中的某个元素失效，不显示
 //                             ImageView img=(ImageView)imgView. findViewById ( R.id.iv_denglu1 );
 //                                img.setImageBitmap ( bitmap);
-                                dialog1.setView ( imgView );
+                                dialog1.setContentView ( imgView );
                                 dialog1.show ( );
 //                                 设置全屏显示
-                                Dialog dialog2 = new Dialog ( getActivity ( ), R.style.Dialog_Fullscreen );
-                                dialog2.setContentView ( R.layout.fragment_my1_head );
-                                dialog2.show ( );
                                 imgView.setOnClickListener ( new View.OnClickListener ( ) {
                                     @Override
                                     public void onClick(View v) {
@@ -201,17 +236,12 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
                 break;
             case R.id.iv_login1:
                 intent=new Intent(getActivity(), MaterialActivity.class);
-                intent.putExtra("title","登录");
+                intent.putExtra("title","我的资料");
                 startActivity(intent);
                 break;
-            case R.id.iv_qr_code1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
-                startActivity(intent);
-                break;
-            case R.id.img:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
+            case R.id.img1:
+                intent=new Intent(getActivity(), ImgActivity.class);
+                intent.putExtra("title","图片");
                 startActivity(intent);
                 break;
             case R.id.news1:

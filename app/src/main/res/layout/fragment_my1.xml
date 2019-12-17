@@ -677,6 +677,12 @@
                         tools:ignore="RtlHardcoded"/>
 
                 </FrameLayout>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_male"
+                    android:visibility="gone"
+                    />
             </LinearLayout>
 
 
