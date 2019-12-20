@@ -37,7 +37,7 @@
         <item name="android:textSize">16sp</item>
     </style>
     <!--   全屏显示 -->
-    <style name="Dialog_Fullscreen">
+    <style name="Fullscreen">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowNoTitle">true</item>
     </style>
@@ -52,4 +52,37 @@
         <item name="android:backgroundDimEnabled">true</item>
         <!-- 是否使用背景半透明 -->
     </style>
+
+    <!-- 分享对话框样式 start -->
+    <style name="dialog_content_share_ll">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="dialog_content_share_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableTop">@drawable/share_icon_qq_selector</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:textColor">#c4c4c4</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!--ButtonDialog样式设定  -->
+    <style name="screen" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+            <item name="android:windowNoTitle">true</item>
+            <item name="android:windowBackground">@android:color/transparent</item>
+
+    </style>
+
+    <style name="Animation" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/translate_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/translate_dialog_out</item>
+    </style>
+
+
+    <!-- 分享对话框样式 end -->
 </resources>

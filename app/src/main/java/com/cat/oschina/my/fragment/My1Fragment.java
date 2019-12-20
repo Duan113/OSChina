@@ -1,16 +1,19 @@
 package com.cat.oschina.my.fragment;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,17 +23,41 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 
 import com.cat.oschina.R;
+import com.cat.oschina.my.activity.ActivityActivity;
+import com.cat.oschina.my.activity.AnswerActivity;
+import com.cat.oschina.my.activity.BeliverActivity;
+import com.cat.oschina.my.activity.BlackActivity;
+import com.cat.oschina.my.activity.BoKeActivity;
+import com.cat.oschina.my.activity.FavoriteActivity;
+import com.cat.oschina.my.activity.FollowerActivity;
+import com.cat.oschina.my.activity.FollowingActivity;
 import com.cat.oschina.my.activity.ImgActivity;
 import com.cat.oschina.my.activity.LoginActivity;
 import com.cat.oschina.my.activity.MaterialActivity;
+import com.cat.oschina.my.activity.ReadActivity;
 import com.cat.oschina.my.activity.Setting1Activity;
-import com.cat.oschina.my.activity.SettingActivity;
+import com.cat.oschina.my.activity.TweetActivity;
+import com.cat.oschina.net.DialogHelp;
+import com.cat.oschina.net.ImageUtils;
 
+import java.io.File;
 import java.util.List;
 
 public class My1Fragment extends androidx.fragment.app.Fragment implements View.OnClickListener {
     private static final String ARG_PARAM1 = "param1";
     private String mParam1;
+    private String theLarge;
+
+    public static final int ACTION_TYPE_ALBUM = 0;
+    public static final int ACTION_TYPE_PHOTO = 1;
+    private final static String FILE_SAVEPATH = Environment
+            .getExternalStorageDirectory().getAbsolutePath()
+            + "/OSChina/Portrait/";
+    private Uri origUri;
+    private Uri cropUri;
+    private File protraitFile;
+    private Bitmap protraitBitmap;
+    private String protraitPath;
 
     private LinearLayout score, favorite, following, follower;
 
@@ -115,16 +142,14 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
                                     public void onClick(View v) {
                                         switch (v.getId()){
                                             case R.id.iv_qr_code1:
-//                                查看大头像
+
                                                                 LayoutInflater inflater = LayoutInflater.from ( getActivity ( ) );
                                                                 View imgView = inflater.inflate ( R.layout.activity_start_dialog, null );
-                                                                Dialog dialog1 = new Dialog ( getActivity ( ), R.style.Dialog_Fullscreen );
-//                                使得弹框中的某个元素失效，不显示
-//                             ImageView img=(ImageView)imgView. findViewById ( R.id.iv_denglu1 );
-//                                img.setImageBitmap ( bitmap);
+                                                                Dialog dialog1 = new Dialog ( getActivity ( ), R.style.Fullscreen );
+
                                                                 dialog1.setContentView ( imgView );
                                                                 dialog1.show ( );
-//                                 设置全屏显示
+
                                                                 imgView.setOnClickListener ( new View.OnClickListener ( ) {
                                                                     @Override
                                                                     public void onClick(View v) {
@@ -200,13 +225,52 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which) {
                             case 0:
+                                DialogHelp.getSelectDialog(getActivity(), "选择图片", getResources().getStringArray(R.array.choose_picture), new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        goToSelectPicture(i);
+                                    }
+
+                                    private void goToSelectPicture(int position) {
+                                        switch (position) {
+                                            case ACTION_TYPE_ALBUM:
+                                                startImagePick();
+                                                break;
+
+                                            default:
+                                                break;
+                                    }
+                                }
+
+
+
+
+
+
+                                    private void startImagePick() {
+                                        Intent intent;
+                                        if (Build.VERSION.SDK_INT < 19) {
+                                            intent = new Intent();
+                                            intent.setAction(Intent.ACTION_GET_CONTENT);
+                                            intent.setType("image/*");
+                                            startActivityForResult(Intent.createChooser(intent, "选择图片"),
+                                                    ImageUtils.REQUEST_CODE_GETIMAGE_BYCROP);
+                                        } else {
+                                            intent = new Intent(Intent.ACTION_PICK,
+                                                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                            intent.setType("image/*");
+                                            startActivityForResult(Intent.createChooser(intent, "选择图片"),
+                                                    ImageUtils.REQUEST_CODE_GETIMAGE_BYCROP);
+                                        }
+                                    }
+                                    }).show();
 //                                更换头像
                                 break;
                             case 1:
 //                                查看大头像
                                 LayoutInflater inflater = LayoutInflater.from ( getActivity ( ) );
                                 View imgView = inflater.inflate ( R.layout.fragment_my1_head, null );
-                            Dialog dialog1 = new Dialog ( getActivity ( ), R.style.Dialog_Fullscreen );
+                            Dialog dialog1 = new Dialog ( getActivity ( ), R.style.Fullscreen );
 //                                使得弹框中的某个元素失效，不显示
 //                             ImageView img=(ImageView)imgView. findViewById ( R.id.iv_denglu1 );
 //                                img.setImageBitmap ( bitmap);
@@ -244,6 +308,22 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
                 intent.putExtra("title","图片");
                 startActivity(intent);
                 break;
+            case R.id. ly_tweet:
+                intent = new Intent(getActivity(), TweetActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.ly_favorite:
+                intent = new Intent(getActivity(), FavoriteActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.ly_following:
+                intent = new Intent(getActivity(), FollowingActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.ly_follower:
+                intent = new Intent(getActivity(), FollowerActivity.class);
+                startActivity(intent);
+                break;
             case R.id.news1:
                 intent=new Intent(getActivity(), LoginActivity.class);
                 intent.putExtra("title","登录");
@@ -255,33 +335,33 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
                 startActivity(intent);
                 break;
             case R.id.read1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
+                intent=new Intent(getActivity(), ReadActivity.class);
+                intent.putExtra("title","阅读记录");
                 startActivity(intent);
                 break;
             case R.id.boke1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
+                intent=new Intent(getActivity(), BoKeActivity.class);
+                intent.putExtra("title","博客");
                 startActivity(intent);
                 break;
             case R.id.black1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
+                intent=new Intent(getActivity(), BlackActivity.class);
+                intent.putExtra("title","灰名单");
                 startActivity(intent);
                 break;
             case R.id.wen1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
+                intent=new Intent(getActivity(), AnswerActivity.class);
+                intent.putExtra("title","问答");
                 startActivity(intent);
                 break;
             case R.id.tou1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
+                intent=new Intent(getActivity(), BeliverActivity.class);
+                intent.putExtra("title","投递");
                 startActivity(intent);
                 break;
             case R.id.activity1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
+                intent=new Intent(getActivity(), ActivityActivity.class);
+                intent.putExtra("title","活动");
                 startActivity(intent);
                 break;
             case R.id.gun1:

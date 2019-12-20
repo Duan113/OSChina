@@ -1,4 +1,4 @@
-package com.king.oschina.view;
+package com.cat.oschina.view;
 
 import android.graphics.Bitmap;
 

@@ -14,9 +14,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.alibaba.fastjson.JSON;
+import com.cat.oschina.Main2Activity;
+import com.cat.oschina.MainActivity;
 import com.cat.oschina.R;
+import com.cat.oschina.my.fragment.My1Fragment;
+import com.cat.oschina.synthetical.entity.CallBackForUser;
+import com.cat.oschina.synthetical.entity.LoginAccessUtil;
+import com.cat.oschina.synthetical.entity.OauthClient;
+import com.cat.oschina.util.ACache;
+
+import me.zhyd.oauth.model.AuthResponse;
+import me.zhyd.oauth.model.AuthUser;
+
 //登录
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener,CallBackForUser{
     private EditText et_login_username,et_login_password;
     private TextView tv_login_forget_password;
     private Button bt_login,bt_register;
@@ -60,7 +72,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-//            case R.id.bt_login_submit:
+            case R.id.bt_login:
+                loginThree();
+                break;
+
 //                Intent intent=new Intent(LoginActivity.this, Main2Activity.class);
 //                startActivity(intent);
             case R.id.bt_register:
@@ -75,6 +90,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
                 break;
         }
+    }
+
+    public void loginThree(){
+        OauthClient client = new OauthClient();
+        client.setClientId("zJR9B11Htc9yvog4KZ0y");
+        client.setClientSecret("eeXKbHVnf7CBE1qonyb0b0P69u5egAV0");
+        client.setRedirectUrl("http://www.baidu.com");
+        client.setUsername(et_login_username.getText().toString());
+        client.setPassword(et_login_password.getText().toString());
+
+        LoginAccessUtil.login(this,client);
 
     }
+
+    @Override
+    public void getUserMsg(String userJson) {
+        ACache.get(this).put("user",userJson);
+        ACache.get(this).put("isLogin",true);
+        ACache.get(this).put("token",
+                JSON.parseObject(userJson).getJSONObject("token").getString(
+                        "accessToken"));
+        startActivity(new Intent(this, Main2Activity.class));
+        finish();
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.example.oschina.synthetical.entity;
+package com.cat.oschina.synthetical.entity;
 
 public class Question {
 }

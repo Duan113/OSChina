@@ -1,18 +1,28 @@
 package com.cat.oschina.synthetical.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.alibaba.fastjson.JSON;
 import com.cat.oschina.R;
 import com.cat.oschina.synthetical.adapter.InformationAdapter;
 import com.cat.oschina.synthetical.entity.Information;
+import com.cat.oschina.synthetical.entity.InformationResult;
+import com.cat.oschina.util.ACache;
 import com.cat.oschina.util.GlideImageLoader;
+import com.cat.oschina.net.URLList;
+import com.okhttplib.HttpInfo;
+import com.okhttplib.OkHttpUtil;
+import com.okhttplib.callback.Callback;
 import com.youth.banner.Banner;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -23,59 +33,75 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.Protocol;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class InformationFragment extends Fragment {
     private Unbinder binder;
-
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-
     private List<Information> lists = new ArrayList<>();
+    private List<Integer> imgs = new ArrayList<>();
 
     private InformationAdapter mInformationAdapter;
 
-    private List<Integer> images = new ArrayList<>();
-    public  InformationFragment(){
-
+    public InformationFragment() {
     }
-
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_information,container,false);
         binder = ButterKnife.bind(this,view);
         return view;
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //TODO 假数据，后续修改为网络请求*******
-        Information information = new Information();
-        for (int i = 0;i<30;i++){
-            lists.add(information);
-        }
-        //***********************************
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false);
+        OkHttpUtil.getDefault(this)
+                .doGetAsync(HttpInfo.Builder().setUrl(URLList.GET_INFORMATION + ACache.get(getActivity()).getAsString("token")).build(), new Callback() {
+                    @Override
+                    public void onSuccess(HttpInfo info) throws IOException {
+                        InformationResult result = info.getRetDetail(InformationResult.class);
+                        mInformationAdapter.replaceData(result.getNewsList());
+                    }
+
+                    @Override
+                    public void onFailure(HttpInfo info) throws IOException {
+                        System.out.println(info);
+
+                    }
+                });
+
+
+//        Information information = new Information();
+//        for (int i=0;i<30;i++){
+//            lists.add(information);
+//
+//        }
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,
+                false);
         recyclerView.setLayoutManager(manager);
         mInformationAdapter = new InformationAdapter(R.layout.item_information,lists);
         recyclerView.setAdapter(mInformationAdapter);
 
-        //处理Header
         View view1 = View.inflate(getActivity(),R.layout.xbanner,null);
         mInformationAdapter.addHeaderView(view1);
 
         Banner banner = view1.findViewById(R.id.banner);
         banner.setImageLoader(new GlideImageLoader());
-        images.add(R.mipmap.first);
-        images.add(R.mipmap.two);
-        images.add(R.mipmap.three);
-        images.add(R.mipmap.four);
-
-        banner.setImages(images);
+        imgs.add(R.mipmap.a);
+        imgs.add(R.mipmap.b);
+        imgs.add(R.mipmap.c);
+        imgs.add(R.mipmap.d);
+        banner.setImages(imgs);
         banner.start();
+
+
     }
 
     @Override

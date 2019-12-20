@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import com.cat.oschina.R;
 import com.cat.oschina.synthetical.adapter.BlogAdapter;
 import com.cat.oschina.synthetical.entity.Blog;
-import com.example.oschina.synthetical.entity.Question;
+
 
 import java.util.ArrayList;
 import java.util.List;

@@ -117,23 +117,32 @@
             android:textColorHint="@color/account_input_color"
             android:textCursorDrawable="@null"
             android:textSize="@dimen/font_16"/>
-
-        <TextView
-            android:id="@+id/tv_register_sms_call"
+        <Button
+            android:id="@+id/bt_getcode_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:alpha="0.4"
-            android:background="@drawable/bg_register_call_sms"
-            android:gravity="center_vertical"
-            android:paddingBottom="4dp"
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp"
-            android:paddingTop="4dp"
+
+            android:layout_marginTop="5dp"
+
             android:text="获取验证码"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            tools:ignore="RtlHardcoded"/>
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_register_sms_call"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:alpha="0.4"-->
+<!--            android:background="@drawable/bg_register_call_sms"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:paddingBottom="4dp"-->
+<!--            android:paddingLeft="6dp"-->
+<!--            android:paddingRight="6dp"-->
+<!--            android:paddingTop="4dp"-->
+<!--            android:text="获取验证码"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="12sp"-->
+<!--            tools:ignore="RtlHardcoded"/>-->
     </LinearLayout>
 
     <LinearLayout

@@ -1,4 +1,4 @@
-package com.king.oschina;
+package com.cat.oschina;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.king.oschina", appContext.getPackageName());
+        assertEquals("com.cat.oschina", appContext.getPackageName());
     }
 }

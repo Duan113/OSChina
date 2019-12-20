@@ -1,4 +1,4 @@
-package com.king.oschina;
+package com.cat.oschina;
 
 import org.junit.Test;
 
