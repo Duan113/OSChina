@@ -2,15 +2,23 @@ package com.cat.oschina.synthetical.fragment;
 
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.cat.oschina.R;
+import com.cat.oschina.net.URLList;
 import com.cat.oschina.synthetical.adapter.SoftwareAdapter;
 import com.cat.oschina.synthetical.entity.Software;
+import com.cat.oschina.synthetical.net.SoftwareResult;
+import com.cat.oschina.util.ACache;
+import com.okhttplib.HttpInfo;
+import com.okhttplib.OkHttpUtil;
+import com.okhttplib.callback.Callback;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +41,6 @@ public class SoftwareFragment extends Fragment {
 
     private SoftwareAdapter mSoftwareAdapter;
 
-    private List<Integer> images = new ArrayList<>();
     public  SoftwareFragment(){
 
     }
@@ -48,25 +55,29 @@ public class SoftwareFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Software software = new Software();
-        for (int i = 0;i<30;i++){
-            lists.add(software);
-        }
+        Log.d("soft", "Software onViewCreated: url:"+ URLList.GET_SOFTWARE + ACache.get(getActivity()).getAsString("token"));
+        OkHttpUtil.getDefault(this)
+                .doGetAsync(HttpInfo.Builder().setUrl(URLList.GET_SOFTWARE + ACache.get(getActivity()).getAsString("token")).build(), new Callback() {
+                    @Override
+                    public void onSuccess(HttpInfo info) throws IOException {
+                        SoftwareResult result = info.getRetDetail(SoftwareResult.class);
+                        mSoftwareAdapter.replaceData(result.getProjectlist());
+                    }
+
+                    @Override
+                    public void onFailure(HttpInfo info) throws IOException {
+                        System.out.println(info);
+
+                    }
+                });
+
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false);
         recyclerSoftware.setLayoutManager(manager);
         mSoftwareAdapter = new SoftwareAdapter(R.layout.item_software,lists);
-//        recyclerSoftware.setHasFixedSize(false);
-//        recyclerSoftware.setNestedScrollingEnabled(false);
         recyclerSoftware.setAdapter(mSoftwareAdapter);
         View view1 = LayoutInflater.from(getActivity()).inflate(R.layout.header_software, null);
         mSoftwareAdapter.setHeaderView(view1);
     }
-
-
-
-
-
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();

@@ -1,17 +1,15 @@
 package com.cat.oschina.synthetical.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.alibaba.fastjson.JSON;
 import com.cat.oschina.R;
 import com.cat.oschina.synthetical.adapter.InformationAdapter;
 import com.cat.oschina.synthetical.entity.Information;
-import com.cat.oschina.synthetical.entity.InformationResult;
+import com.cat.oschina.synthetical.net.InformationResult;
 import com.cat.oschina.util.ACache;
 import com.cat.oschina.util.GlideImageLoader;
 import com.cat.oschina.net.URLList;
@@ -22,7 +20,6 @@ import com.youth.banner.Banner;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -33,11 +30,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import okhttp3.Call;
-import okhttp3.OkHttpClient;
-import okhttp3.Protocol;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class InformationFragment extends Fragment {
     private Unbinder binder;

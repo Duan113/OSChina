@@ -57,6 +57,7 @@ private ImageButton navigation_back;
 
         SMSSDK.registerEventHandler(eventHandler);
     }
+    //验证码倒计时
     public class Time extends CountDownTimer{
 
         public Time(long millisInFuture, long countDownInterval) {

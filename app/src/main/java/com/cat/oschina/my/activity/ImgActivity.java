@@ -17,10 +17,11 @@ import com.cat.oschina.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+//图片
 public class ImgActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView( R.id.ib_navigation_back )
     ImageButton reBack;
+    //分享
     @BindView(R.id.share)
     ImageView share;
     @Override

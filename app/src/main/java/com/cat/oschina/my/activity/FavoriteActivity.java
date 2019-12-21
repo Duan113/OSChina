@@ -10,7 +10,7 @@ import com.cat.oschina.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+//收藏
 public class FavoriteActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView( R.id.ib_navigation_back )
     ImageButton reBack;

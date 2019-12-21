@@ -10,7 +10,7 @@ import com.cat.oschina.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+//我的活动
 public class ActivityActivity extends AppCompatActivity implements View.OnClickListener {
     //返回键
     @BindView( R.id.ib_navigation_back )

@@ -1,4 +1,4 @@
-package com.cat.oschina.synthetical.entity;
+package com.cat.oschina.synthetical.net;
 
 import com.cat.oschina.net.Notice;
 import com.cat.oschina.synthetical.entity.Information;

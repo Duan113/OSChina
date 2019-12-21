@@ -4,6 +4,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Handler;
@@ -19,7 +20,11 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
+import com.cat.oschina.Main2Activity;
+import com.cat.oschina.MainActivity;
 import com.cat.oschina.R;
+import com.cat.oschina.my.activity.ActivityActivity;
+import com.cat.oschina.utils.TakingActivity;
 import com.ms_square.etsyblur.BlurringView;
 public class MoreWindow extends PopupWindow implements OnClickListener {
 
@@ -32,6 +37,8 @@ public class MoreWindow extends PopupWindow implements OnClickListener {
     private int mHeight;
     private int statusBarHeight;
     private Handler mHandler = new Handler();
+
+    private LinearLayout answer,show,take;
 
     public MoreWindow(Activity context) {
         mContext = context;
@@ -58,7 +65,12 @@ public class MoreWindow extends PopupWindow implements OnClickListener {
         layout = (RelativeLayout) LayoutInflater.from(mContext).inflate(R.layout.more_window, null);
 
         setContentView(layout);
-
+        answer = (LinearLayout) layout.findViewById(R.id.tv_search);
+        answer.setOnClickListener(this);
+        take = layout.findViewById(R.id.tv_sbs);
+        take.setOnClickListener(this);
+        show = layout.findViewById(R.id.tv_course);
+        show.setOnClickListener(this);
         close = (ImageView) layout.findViewById(R.id.iv_close);
         close.setOnClickListener(new OnClickListener() {
 
@@ -217,6 +229,9 @@ public class MoreWindow extends PopupWindow implements OnClickListener {
 
         switch (v.getId()) {
             case R.id.tv_sbs:
+                Intent intent = new Intent(mContext, TakingActivity.class);
+                mContext.startActivity(intent);
+
                 break;
             case R.id.tv_search:
                 break;

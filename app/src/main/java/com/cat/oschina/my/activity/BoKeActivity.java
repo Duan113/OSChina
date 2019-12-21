@@ -10,7 +10,7 @@ import com.cat.oschina.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+//我的博客
 public class BoKeActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.ib_navigation_back)
     ImageButton reBack;
