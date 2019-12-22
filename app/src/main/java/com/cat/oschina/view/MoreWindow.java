@@ -24,7 +24,9 @@ import com.cat.oschina.Main2Activity;
 import com.cat.oschina.MainActivity;
 import com.cat.oschina.R;
 import com.cat.oschina.my.activity.ActivityActivity;
+import com.cat.oschina.utils.BlankActivity;
 import com.cat.oschina.utils.TakingActivity;
+import com.cat.oschina.utils.WriteActivity;
 import com.ms_square.etsyblur.BlurringView;
 public class MoreWindow extends PopupWindow implements OnClickListener {
 
@@ -234,8 +236,13 @@ public class MoreWindow extends PopupWindow implements OnClickListener {
 
                 break;
             case R.id.tv_search:
+                 intent = new Intent(mContext, WriteActivity.class);
+                mContext.startActivity(intent);
+
                 break;
             case R.id.tv_course:
+                intent = new Intent(mContext, BlankActivity.class);
+                mContext.startActivity(intent);
                 break;
 
         }

@@ -40,21 +40,23 @@ import me.zhyd.oauth.utils.StringUtils;
 import static android.view.accessibility.AccessibilityEvent.MAX_TEXT_LENGTH;
 
 public class TakingActivity extends AppCompatActivity implements View.OnClickListener {
+    //表情,相机
     private ImageButton ib_emoji_keyboard,ib_trend_software,ib_picture,ib_mention;
-    private EditText editText;
-    private GridViewFaceAdapter mGVFaceAdapter;
+
+
+    //发送
     public Button send;
     private String theLarge;
+    //返回键
+    private ImageButton ib_navigation_back;
+    //文字
 private EditText mEtInput;
-    private static final String TEXT_SOFTWARE = "#请输入软件名#";
-//    private final EmojiKeyboardFragment keyboardFragment = new EmojiKeyboardFragment();
+    private static final String TEXT_SOFTWARE = "请输入软件名";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_taking);
-        editText=findViewById(R.id.et_content);
-        editText.setOnClickListener(this);
         send =findViewById(R.id.send);
         send.setOnClickListener(this);
         ib_mention=findViewById(R.id.ib_mention);
@@ -67,6 +69,8 @@ private EditText mEtInput;
         ib_trend_software.setOnClickListener(this);
         ib_emoji_keyboard = findViewById(R.id.ib_emoji_keyboard);
         ib_emoji_keyboard.setOnClickListener(this);
+        ib_navigation_back=findViewById(R.id.ib_navigation_back);
+        ib_navigation_back.setOnClickListener(this);
     }
 
 
@@ -74,22 +78,17 @@ private EditText mEtInput;
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ib_emoji_keyboard:
-//                if (keyboardFragment.isShow()) {
-//                    keyboardFragment.hideEmojiKeyBoard();
-//                    keyboardFragment.showSoftKeyboard(mEtInput);
-//                } else {
-//                    keyboardFragment.showEmojiKeyBoard();
-//                    keyboardFragment.hideSoftKeyboard();
-//                }
                 break;
             case R.id.ib_trend_software:
                 insertTrendSoftware();
                 break;
             case R.id.ib_mention:
                 break;
+            case R.id.ib_navigation_back:
+                finish();
             case R.id.send:
                 OkHttpUtil.getDefault(this)
-                        .doGetAsync(HttpInfo.Builder().setUrl(URLList.SEND_TWEET +"?msg="+editText.getText().toString()+
+                        .doGetAsync(HttpInfo.Builder().setUrl(URLList.SEND_TWEET +"?msg="+mEtInput.getText().toString()+
                                 "&access_token="+ACache.get(TakingActivity.this).getAsString("token")).build(), new Callback() {
                             @Override
                             public void onSuccess(HttpInfo info) throws IOException {
@@ -108,7 +107,6 @@ private EditText mEtInput;
             case R.id.ib_picture:
                 handleSelectPicture();
                 break;
-//                initGridView();
         }
     }
 
@@ -200,20 +198,5 @@ private EditText mEtInput;
         mEtInput.setSelection(start, end);// 设置选中文字
     }
 
-//    //初始化表情控件
-//    private void initGridView() {
-////        mGVFaceAdapter = new GridViewFaceAdapter(this);
-//        @SuppressLint("WrongViewCast") GridView mGridView = (GridView) findViewById(R.id.ib_emoji_keyboard);
-//        mGridView.setAdapter(mGVFaceAdapter);
-//        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                //插入的表情
-//                SpannableString ss = new SpannableString(view.getTag().toString());
-//                Drawable d = getResources().getDrawable((int) mGVFaceAdapter.getItemId(position));
-//                d.setBounds(0, 0, 35, 35);//设置表情图片的显示大小 				ImageSpan span = new ImageSpan(d, ImageSpan.ALIGN_BOTTOM); 				ss.setSpan(span, 0, view.getTag().toString().length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);				 				//在光标所在处插入表情 				mContent.getText().insert(mContent.getSelectionStart(), ss);				 			} 		 	}); }
-//            }
-//
-//        });
-//    }
 
 }

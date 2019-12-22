@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    android:orientation="vertical"
+    android:background="#F7F7F7"
+    tools:context="com.cat.oschina.utils.WriteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10px"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ib_navigation_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@mipmap/back"
+            android:contentDescription="@null"
+            />
+
+        <TextView
+            android:id="@+id/tv_navigation_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40px"
+            android:layout_weight="1"
+            android:text="发布问答"
+
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+        <Button
+            android:id="@+id/send1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:text="√"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:background="#F0F0F0"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+    <View
+        style="@style/h_line" />
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="问答标题"/>
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@null"
+        android:gravity="top|left"
+        android:padding="12dp"
+        android:textColor="?android:editTextColor"
+        android:textSize="18sp" />
+
+
+
+
+    <View
+        style="@style/h_line" />
+
+
+
+</LinearLayout>

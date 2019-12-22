@@ -24,7 +24,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".utils.TakingActivity"></activity>
+        <activity android:name=".utils.BlankActivity"></activity>
+        <activity android:name=".utils.WriteActivity" />
+        <activity android:name=".utils.TakingActivity" />
         <activity android:name=".my.activity.ReadActivity" />
         <activity android:name=".my.activity.ActivityActivity" />
         <activity android:name=".my.activity.BeliverActivity" />
