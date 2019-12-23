@@ -13,4 +13,6 @@
     <string name="tip_phone_regex_not_right" />
     <string name="tip_please_input_6_32_password" />
     <string name="tweet_hint">今天想动弹什么?</string>
+    <string name="login_wechat_hint">正在启动微信中&#8230;</string>
+    <string name="login_weibo_hint">正在启动微博中&#8230;</string>
 </resources>

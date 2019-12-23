@@ -52,7 +52,7 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
             case R.id.send1:
                 OkHttpUtil.getDefault(this)
                         .doGetAsync(HttpInfo.Builder().setUrl(URLList.SEND_QUESTION +"?title="+mEtTitle.getText().toString()+
-                                "?content="+mEtInput.getText().toString()+
+                                "&content="+mEtInput.getText().toString()+
                                 "&access_token="+ ACache.get(WriteActivity.this).getAsString("token")).build(), new Callback() {
                             @Override
                             public void onSuccess(HttpInfo info) throws IOException {

@@ -41,6 +41,7 @@ public class ForgetActivity extends Activity implements View.OnClickListener {
     private EditText phoneEdit;
     private EditText passwordEdit;
     private EditText verifyCodeEdit;
+    private ImageButton ib_navigation_back;
     private Button getVerifiCodeButton;
     private Button resetButton;
 
@@ -77,15 +78,17 @@ public class ForgetActivity extends Activity implements View.OnClickListener {
 
     private void initViews() {
 
-        resetButton = getView(R.id.register_submit);
+        resetButton = findViewById(R.id.register_submit);
         resetButton.setOnClickListener(this);
-        getVerifiCodeButton = getView(R.id.tv_register_sms_call);
+        getVerifiCodeButton = findViewById(R.id.tv_register_sms_call);
         getVerifiCodeButton.setOnClickListener(this);
-        phoneEdit = getView(R.id.et_register_username);
+        ib_navigation_back=findViewById(R.id.ib_navigation_back);
+        ib_navigation_back.setOnClickListener(this);
+        phoneEdit = findViewById(R.id.et_register_username);
         phoneEdit.setImeOptions(EditorInfo.IME_ACTION_NEXT);// 下一步
-        verifyCodeEdit = getView(R.id.et_register_auth_code);
+        verifyCodeEdit = findViewById(R.id.et_register_auth_code);
         verifyCodeEdit.setImeOptions(EditorInfo.IME_ACTION_NEXT);// 下一步
-        passwordEdit = getView(R.id.et_register_password);
+        passwordEdit = findViewById(R.id.et_register_password);
         passwordEdit.setImeOptions(EditorInfo.IME_ACTION_DONE);
         passwordEdit.setImeOptions(EditorInfo.IME_ACTION_GO);
         passwordEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -225,9 +228,9 @@ public class ForgetActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-//            case R.id.iv_cancel:
-//                finish();
-//                break;
+            case R.id.ib_navigation_back:
+                finish();
+                break;
             case R.id.tv_register_sms_call:
                 // TODO 请求接口发送验证码
                 codeManager.getVerifyCode(VerifyCodeManager.RESET_PWD);
