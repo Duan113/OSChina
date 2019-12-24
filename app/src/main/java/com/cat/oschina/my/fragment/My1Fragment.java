@@ -1,6 +1,5 @@
 package com.cat.oschina.my.fragment;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -37,8 +36,8 @@ import com.cat.oschina.my.activity.MaterialActivity;
 import com.cat.oschina.my.activity.ReadActivity;
 import com.cat.oschina.my.activity.Setting1Activity;
 import com.cat.oschina.my.activity.TweetActivity;
-import com.cat.oschina.net.DialogHelp;
-import com.cat.oschina.net.ImageUtils;
+import com.cat.oschina.tool.DialogHelp;
+import com.cat.oschina.tool.ImageUtils;
 
 import java.io.File;
 import java.util.List;

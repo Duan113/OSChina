@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cat.oschina">
-
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -24,7 +24,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".utils.BlankActivity"></activity>
+        <activity android:name=".discovtry.ShakeActivity"></activity>
+        <activity android:name=".discovtry.activity.SweepActivity" />
+        <activity android:name=".discovtry.activity.SOClassificationActivity" />
+        <activity android:name=".discovtry.activity.OpenSourceActivity" />
+        <activity android:name=".discovtry.activity.OfflineActivity" />
+        <activity android:name=".discovtry.activity.CodeCloudActivity" />
+        <activity android:name=".utils.BlankActivity" />
         <activity android:name=".utils.WriteActivity" />
         <activity android:name=".utils.TakingActivity" />
         <activity android:name=".my.activity.ReadActivity" />

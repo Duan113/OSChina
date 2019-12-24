@@ -1,4 +1,4 @@
-package com.cat.oschina.net;
+package com.cat.oschina.tool;
 
 public class Notice {
     private int referCount;

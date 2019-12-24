@@ -1,4 +1,4 @@
-package com.cat.oschina.net;
+package com.cat.oschina.tool;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

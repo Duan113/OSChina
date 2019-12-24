@@ -1,4 +1,4 @@
-package com.cat.oschina.net;
+package com.cat.oschina.tool;
 
 import com.cat.oschina.my.activity.ForgetActivity;
 

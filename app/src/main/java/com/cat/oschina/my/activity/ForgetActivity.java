@@ -1,7 +1,5 @@
 package com.cat.oschina.my.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -21,9 +19,9 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONException;
 import com.cat.oschina.R;
-import com.cat.oschina.net.RegexUtils;
-import com.cat.oschina.net.ToastUtils;
-import com.cat.oschina.net.VerifyCodeManager;
+import com.cat.oschina.tool.RegexUtils;
+import com.cat.oschina.tool.ToastUtils;
+import com.cat.oschina.tool.VerifyCodeManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;

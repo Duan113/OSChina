@@ -2,29 +2,23 @@ package com.cat.oschina.utils;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.text.SpannableString;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.cat.oschina.R;
-import com.cat.oschina.net.DialogHelp;
-import com.cat.oschina.net.ImageUtils;
+import com.cat.oschina.tool.DialogHelp;
+import com.cat.oschina.tool.ImageUtils;
 import com.cat.oschina.net.URLList;
-import com.cat.oschina.synthetical.net.QuestionResult;
 import com.cat.oschina.util.ACache;
 import com.okhttplib.HttpInfo;
 import com.okhttplib.OkHttpUtil;
@@ -34,8 +28,6 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import me.zhyd.oauth.utils.StringUtils;
 
 import static android.view.accessibility.AccessibilityEvent.MAX_TEXT_LENGTH;
 

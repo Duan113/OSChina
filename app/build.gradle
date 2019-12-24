@@ -9,7 +9,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        applicationId"com.aohuan.jinghai_lifee"
+        applicationId "com.aohuan.jinghai_lifee"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         MobSDK {
             appKey "2d895c0e2f7d0"
@@ -17,6 +17,34 @@ android {
             SMSSDK {
 
             }
+            ShareSDK {
+                loopShare true
+                devInfo {
+                    SinaWeibo {
+                        appKey "2d895c0e2f7d0"
+                        appSecret "60e71408873fc2d648a33e0e63416697"
+                        callbackUri "http://www.sharesdk.cn"
+                    }
+                    Wechat {
+                        appId "wx4868b35061f87885"
+                        appSecret "64020361b8ec4c99936c0e3999a9f249"
+                        userName "gh_afb25ac019c9"
+                        path "pages/index/index.html?id=1"
+                        withShareTicket true
+                        miniprogramType 2
+                    }
+
+                    WechatMoments {
+                        appId "wx4868b35061f87885"
+                        appSecret "64020361b8ec4c99936c0e3999a9f249"
+                    }
+                    WechatFavorite {
+                        appId "wx4868b35061f87885"
+                        appSecret "64020361b8ec4c99936c0e3999a9f249"
+                    }
+                }
+            }
+
         }
         renderscriptTargetApi 29
         renderscriptSupportModeEnabled true
@@ -61,6 +89,13 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
     implementation 'me.zhyd.oauth:JustAuth:1.13.1'
     implementation 'com.zhousf.lib:okhttp3:2.9.9'
+
+
+    implementation 'me.panpf:switch-button:2.0.0'
+    //扫一扫
+    implementation 'com.google.zxing:core:3.2.1'
+    implementation 'cn.bingoogolapple:bga-qrcodecore:1.1.7@aar'
+    implementation 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
 
 
 }

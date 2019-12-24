@@ -1,5 +1,5 @@
 package com.cat.oschina.synthetical.net;
-import com.cat.oschina.net.Notice;
+import com.cat.oschina.tool.Notice;
 import com.cat.oschina.synthetical.entity.Question;
 import java.util.List;
 public class QuestionResult {

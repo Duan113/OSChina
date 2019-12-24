@@ -77,6 +77,9 @@
                     android:text="双击退出"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
+<me.panpf.switchbutton.SwitchButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
 
                 <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
                 <!--                android:id="@+id/tb_double_click_exit"-->
@@ -108,7 +111,9 @@
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     tools:ignore="HardcodedText" />
-
+                <me.panpf.switchbutton.SwitchButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
                 <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
                 <!--                android:id="@+id/tui"-->
                 <!--                style="@style/option_item_toggleButton" />-->
@@ -139,7 +144,9 @@
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     tools:ignore="HardcodedText" />
-
+                <me.panpf.switchbutton.SwitchButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
                 <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
                 <!--                android:id="@+id/tb_clip"-->
                 <!--                style="@style/option_item_toggleButton" />-->
@@ -169,7 +176,10 @@
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     tools:ignore="HardcodedText" />
-
+                <me.panpf.switchbutton.SwitchButton
+                    android:id="@+id/night"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
                 <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
                 <!--                android:id="@+id/night"-->
                 <!--                style="@style/option_item_toggleButton" />-->
@@ -205,7 +215,10 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         tools:ignore="HardcodedText" />
-
+                    <me.panpf.switchbutton.SwitchButton
+                        android:id="@+id/night_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
                     <!--            <net.oschina.app.improve.widget.togglebutton.ToggleButton-->
                     <!--                android:id="@+id/time1"-->
                     <!--                style="@style/option_item_toggleButton" />-->
