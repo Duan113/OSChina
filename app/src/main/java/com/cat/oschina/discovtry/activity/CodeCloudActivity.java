@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CodeCloudActivity extends AppCompatActivity implements View.OnClickListener {
-
+//
     private Unbinder binder;
 
     @BindView(R.id.recyclerView_codecloud)
