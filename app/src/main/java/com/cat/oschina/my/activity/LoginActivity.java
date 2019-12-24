@@ -129,6 +129,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.login_pull:
                 login_pull.animate().cancel();
                 login_layer.animate().cancel();
+                //得到控件的高度
                 int height = login_options.getHeight();
                 float progress = (login_layer.getTag() != null && login_layer.getTag() instanceof Float) ?
                         (float) login_layer.getTag() : 1;
@@ -262,13 +263,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                        授权成功后,获取用户信息，要自己解析，看看oncomplete里面的注释
 //                        ShareSDK只保存以下这几个通用值
                 cn.sharesdk.framework.Platform pf = ShareSDK.getPlatform( SinaWeibo.NAME);
-//                        Log.e("sharesdk use_id", pf.getDb().getUserId()); //获取用户id
-//                        Log.e("sharesdk use_name", pf.getDb().getUserName());//获取用户名称
-//                        Log.e("sharesdk use_icon", pf.getDb().getUserIcon());//获取用户头像
+                        Log.e("sharesdk use_id", pf.getDb().getUserId()); //获取用户id
+                        Log.e("sharesdk use_name", pf.getDb().getUserName());//获取用户名称
+                        Log.e("sharesdk use_icon", pf.getDb().getUserIcon());//获取用户头像
                         mThirdLoginResult.setText("授权成功"+"\n"+"用户id:" + pf.getDb().getUserId() + "\n" + "获取用户名称" + pf.getDb().getUserName() + "\n" + "获取用户头像" + pf.getDb().getUserIcon());
                         //mPf.author()这个方法每一次都会调用授权，出现授权界面
                         //如果要删除授权信息，重新授权
-                        //mPf.getDb().removeAccount();
+//                        mPf.getDb().removeAccount();
                         //调用后，用户就得重新授权，否则下一次就不用授权
                     }
                     break;

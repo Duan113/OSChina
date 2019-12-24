@@ -127,7 +127,7 @@
         </FrameLayout>
 
             <Button
-                android:id="@+id/xz"
+                android:id="@+id/xun"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="我的勋章"
@@ -247,7 +247,7 @@
             </FrameLayout>
 
             <Button
-                android:id="@+id/wen"
+                android:id="@+id/answer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="我的问答"
@@ -337,7 +337,7 @@
             </FrameLayout>
 
             <Button
-                android:id="@+id/gun"
+                android:id="@+id/folwer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="关注标签"

@@ -49,6 +49,7 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.ib_navigation_back:
                 finish();
+                break;
             case R.id.send1:
                 OkHttpUtil.getDefault(this)
                         .doGetAsync(HttpInfo.Builder().setUrl(URLList.SEND_QUESTION +"?title="+mEtTitle.getText().toString()+

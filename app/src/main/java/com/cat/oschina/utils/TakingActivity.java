@@ -78,6 +78,7 @@ private EditText mEtInput;
                 break;
             case R.id.ib_navigation_back:
                 finish();
+                break;
             case R.id.send:
                 OkHttpUtil.getDefault(this)
                         .doGetAsync(HttpInfo.Builder().setUrl(URLList.SEND_TWEET +"?msg="+mEtInput.getText().toString()+

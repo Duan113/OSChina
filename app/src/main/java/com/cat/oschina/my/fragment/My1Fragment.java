@@ -116,14 +116,14 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
         code = view.findViewById(R.id.iv_qr_code1);
         img = view.findViewById(R.id.img1);
         news = view.findViewById(R.id.news1);
-        xun = view.findViewById(R.id.xz1);
+        xun = view.findViewById(R.id.xun1);
         note = view.findViewById(R.id.read1);
         boke = view.findViewById(R.id.boke1);
         dan = view.findViewById(R.id.black1);
-        da =view.findViewById(R.id.wen1);
+        da =view.findViewById(R.id.answer1);
         tou = view.findViewById(R.id.tou1);
         activity = view.findViewById(R.id.activity1);
-        foll = view.findViewById(R.id.gun1);
+        foll = view.findViewById(R.id.folwer1);
         friend =view.findViewById(R.id.please1);
         //2.创建Adapter
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,datas);
@@ -324,14 +324,14 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
                 startActivity(intent);
                 break;
             case R.id.news1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
-                startActivity(intent);
+//                intent=new Intent(getActivity(), LoginActivity.class);
+//                intent.putExtra("title","登录");
+//                startActivity(intent);
                 break;
-            case R.id.xz1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
-                startActivity(intent);
+            case R.id.xun1:
+//                intent=new Intent(getActivity(), LoginActivity.class);
+//                intent.putExtra("title","登录");
+//                startActivity(intent);
                 break;
             case R.id.read1:
                 intent=new Intent(getActivity(), ReadActivity.class);
@@ -348,7 +348,7 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
                 intent.putExtra("title","灰名单");
                 startActivity(intent);
                 break;
-            case R.id.wen1:
+            case R.id.answer1:
                 intent=new Intent(getActivity(), AnswerActivity.class);
                 intent.putExtra("title","问答");
                 startActivity(intent);
@@ -363,15 +363,15 @@ public class My1Fragment extends androidx.fragment.app.Fragment implements View.
                 intent.putExtra("title","活动");
                 startActivity(intent);
                 break;
-            case R.id.gun1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
-                startActivity(intent);
+            case R.id.folwer1:
+//                intent=new Intent(getActivity(), LoginActivity.class);
+//                intent.putExtra("title","登录");
+//                startActivity(intent);
                 break;
             case R.id.please1:
-                intent=new Intent(getActivity(), LoginActivity.class);
-                intent.putExtra("title","登录");
-                startActivity(intent);
+//                intent=new Intent(getActivity(), LoginActivity.class);
+//                intent.putExtra("title","登录");
+//                startActivity(intent);
                 break;
 
         }

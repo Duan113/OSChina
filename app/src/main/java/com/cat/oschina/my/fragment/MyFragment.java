@@ -74,14 +74,14 @@ public class MyFragment extends androidx.fragment.app.Fragment implements View.O
         code = view.findViewById(R.id.iv_qr_code);
         img = view.findViewById(R.id.img11);
         news = view.findViewById(R.id.news);
-        xun = view.findViewById(R.id.xz);
+        xun = view.findViewById(R.id.xun);
         note = view.findViewById(R.id.read);
         boke = view.findViewById(R.id.boke);
         dan = view.findViewById(R.id.black);
-        da =view.findViewById(R.id.wen);
+        da =view.findViewById(R.id.answer);
         tou = view.findViewById(R.id.tou);
         activity = view.findViewById(R.id.activity);
-        foll = view.findViewById(R.id.gun);
+        foll = view.findViewById(R.id.folwer);
         friend =view.findViewById(R.id.please);
         //2.创建Adapter
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,datas);
@@ -165,7 +165,7 @@ public class MyFragment extends androidx.fragment.app.Fragment implements View.O
                 intent.putExtra("title","登录");
                 startActivity(intent);
                 break;
-            case R.id.xz:
+            case R.id.xun:
                 intent=new Intent(getActivity(), LoginActivity.class);
                 intent.putExtra("title","登录");
                 startActivity(intent);
@@ -185,7 +185,7 @@ public class MyFragment extends androidx.fragment.app.Fragment implements View.O
                 intent.putExtra("title","登录");
                 startActivity(intent);
                 break;
-            case R.id.wen:
+            case R.id.answer:
                 intent=new Intent(getActivity(), LoginActivity.class);
                 intent.putExtra("title","登录");
                 startActivity(intent);
@@ -200,7 +200,7 @@ public class MyFragment extends androidx.fragment.app.Fragment implements View.O
                 intent.putExtra("title","登录");
                 startActivity(intent);
                 break;
-            case R.id.gun:
+            case R.id.folwer:
                 intent=new Intent(getActivity(), LoginActivity.class);
                 intent.putExtra("title","登录");
                 startActivity(intent);

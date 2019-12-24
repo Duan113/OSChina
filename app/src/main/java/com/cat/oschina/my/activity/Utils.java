@@ -22,7 +22,7 @@ public class Utils {
         if (sp.getString(key, "") != null) {
             return sp.getString(key, "");
         }
-        return null;
+        return value;
     }
 }
 
